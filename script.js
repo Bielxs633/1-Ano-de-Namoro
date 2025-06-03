@@ -3,7 +3,7 @@
  * Data: 01/06/25
  * Autor: Gabriel
  * Para: Eduarda
- * Versão: 2.2
+ * Versão: 3.0 (com confetes e quiz)
  **/
 
 'use strict'
@@ -60,8 +60,47 @@ const loveInLanguages = [
     {language: "Cantonês", phrase: "我愛你 (Ngo oi ney)"}
 ];
 
+// // Quiz - Personalize com suas perguntas
+// const quizQuestions = [
+//     {
+//         question: "Qual é a minha cor favorita?",
+//         options: ["Azul", "Roxo", "Vermelho", "Preto"],
+//         answer: 1
+//     },
+//     {
+//         question: "Qual é a minha comida preferida?",
+//         options: ["Hamburguer", "Strogonoff", "Lasanha", "Batata"],
+//         answer: 3
+//     },
+//     {
+//         question: "Qual foi minha posição no basquete?",
+//         options: ["Armador", "Ala", "Ala-Armador", "Pivo"],
+//         answer: 2
+//     },
+//     {
+//         question: "Qual meu animal favorito?",
+//         options: ["Pato", "Capivara", "Ornitorrinco", "Macaco"],
+//         answer: 0
+//     },
+//     {
+//         question: "Qual estação do ano eu prefiro?",
+//         options: ["Verão", "Outono", "Primavera", "Inverno"],
+//         answer: 3
+//     },
+//     {
+//         question: "Qual meu jogo preferido?",
+//         options: ["Hollow Knight", "Balatro", "The Last of Us", "Clash Royale"],
+//         answer: 2
+//     }
+// ];
+
+// let currentQuestion = 0;
+// let quizScore = 0;
+
 // Funções globais para o botão de Eu Te Amo
 window.showLoveInAllLanguages = function() {
+    createConfetti(); // Adiciona confetes
+    
     const modal = document.getElementById('loveLanguagesModal');
     const grid = document.getElementById('languagesGrid');
     
@@ -79,6 +118,128 @@ window.showLoveInAllLanguages = function() {
 window.closeLoveLanguages = function() {
     document.getElementById('loveLanguagesModal').style.display = 'none';
 };
+
+// Função para criar confetes
+function createConfetti() {
+    const colors = ['#ff0000', '#ff1493', '#00bfff', '#32cd32', '#ff8c00', '#ffd700', '#9400d3'];
+    
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        
+        // Posição aleatória
+        confetti.style.left = Math.random() * 100 + 'vw';
+        
+        // Cor aleatória
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Tamanho aleatório
+        const size = Math.random() * 10 + 5;
+        confetti.style.width = size + 'px';
+        confetti.style.height = size + 'px';
+        
+        // Forma aleatória (quadrado ou círculo)
+        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        
+        // Duração e atraso aleatórios
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confetti.style.animationDelay = (Math.random() * 2) + 's';
+        
+        document.body.appendChild(confetti);
+        
+        // Remover após a animação
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+
+// // Funções do Quiz
+// function startQuiz() {
+//     currentQuestion = 0;
+//     quizScore = 0;
+//     document.getElementById('quiz-start').style.display = 'none';
+//     document.getElementById('quiz-next').style.display = 'inline-block';
+//     document.getElementById('quiz-result').textContent = '';
+//     showQuestion();
+// }
+
+// function showQuestion() {
+//     const questionObj = quizQuestions[currentQuestion];
+//     document.getElementById('quiz-progress').textContent = `Pergunta ${currentQuestion + 1} de ${quizQuestions.length}`;
+//     document.getElementById('quiz-question').textContent = questionObj.question;
+    
+//     const optionsContainer = document.getElementById('quiz-options');
+//     optionsContainer.innerHTML = '';
+    
+//     questionObj.options.forEach((option, index) => {
+//         const optionElement = document.createElement('div');
+//         optionElement.className = 'quiz-option';
+//         optionElement.textContent = option;
+//         optionElement.addEventListener('click', () => selectAnswer(index));
+//         optionsContainer.appendChild(optionElement);
+//     });
+    
+//     document.getElementById('quiz-next').style.display = 'none';
+// }
+
+// function selectAnswer(selectedIndex) {
+//     const questionObj = quizQuestions[currentQuestion];
+//     const options = document.querySelectorAll('.quiz-option');
+    
+//     // Desabilitar todas as opções
+//     options.forEach(option => {
+//         option.style.pointerEvents = 'none';
+//     });
+    
+//     // Marcar a resposta correta
+//     options[questionObj.answer].classList.add('correct');
+    
+//     // Verificar se a resposta está correta
+//     if (selectedIndex === questionObj.answer) {
+//         quizScore++;
+//         document.getElementById('quiz-result').textContent = 'Resposta correta!';
+//     } else {
+//         options[selectedIndex].classList.add('incorrect');
+//         document.getElementById('quiz-result').textContent = `Errou! A resposta correta é: ${questionObj.options[questionObj.answer]}`;
+//     }
+    
+//     document.getElementById('quiz-next').style.display = 'inline-block';
+// }
+
+// function nextQuestion() {
+//     currentQuestion++;
+    
+//     if (currentQuestion < quizQuestions.length) {
+//         showQuestion();
+//     } else {
+//         // Fim do quiz
+//         showQuizResult();
+//     }
+// }
+
+// function showQuizResult() {
+//     const quizContainer = document.getElementById('quiz-options');
+//     quizContainer.innerHTML = '';
+//     document.getElementById('quiz-question').textContent = '';
+//     document.getElementById('quiz-progress').textContent = '';
+//     document.getElementById('quiz-next').style.display = 'none';
+    
+//     const percentage = Math.round((quizScore / quizQuestions.length) * 100);
+//     let message = '';
+    
+//     if (percentage >= 90) {
+//         message = `Nada mais que sua obrigação ${quizScore} de ${quizQuestions.length} (${percentage}%) - É isso ai `;
+//     } else if (percentage >= 60) {
+//         message = `Hummm e ai pae? ${quizScore} de ${quizQuestions.length} (${percentage}%) - Vamo querer mais ai? `;
+//     } else {
+//         message = `Oloko ${quizScore} de ${quizQuestions.length} (${percentage}%) - ...`;
+//     }
+    
+//     document.getElementById('quiz-result').innerHTML = `<h3>Resultado do Quiz</h3><p>${message}</p>`;
+//     document.getElementById('quiz-start').style.display = 'inline-block';
+//     document.getElementById('quiz-start').textContent = 'Fazer Novamente';
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     // Configuração da data do próximo aniversário
@@ -217,4 +378,11 @@ document.addEventListener('DOMContentLoaded', function() {
             closeLoveLanguages();
         }
     });
+    
+    // Inicializar quiz
+    const quizStartBtn = document.getElementById('quiz-start');
+    const quizNextBtn = document.getElementById('quiz-next');
+    
+    quizStartBtn.addEventListener('click', startQuiz);
+    quizNextBtn.addEventListener('click', nextQuestion);
 });
