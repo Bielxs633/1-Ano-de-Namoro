@@ -333,7 +333,61 @@ const loveInLanguages = [
     {language: "Yapese (Micronésia)", phrase: "Ga fgow rom"},
     {language: "Yemba (Camarões)", phrase: "Mə̀ fə́ŋ wì"},
     {language: "Yidiche (Europa)", phrase: "איך האָב דיר ליב (Ikh hob dikh lib)"},
-    {language: "Zarma (Níger)", phrase: "Ay ga ba ni"}
+    {language: "Zarma (Níger)", phrase: "Ay ga ba ni"},
+    {language: "Adigue (Cáucaso)", phrase: "Сэ о ушъу (Se o wshu)"},
+    {language: "Ahtna (Alasca)", phrase: "Iiná ełkʼeltsʼen"},
+    {language: "Akan (Gana)", phrase: "Medɔ wo"},
+    {language: "Akoose (Camarões)", phrase: "Mə̀ fʉ̀ʼ wì"},
+    {language: "Alutiiq (Alasca)", phrase: "Kenkamken"},
+    {language: "Amis (Taiwan)", phrase: "Maolah kako kiso"},
+    {language: "Anejom (Vanuatu)", phrase: "Nak amjijik oho"},
+    {language: "Arrernte (Austrália)", phrase: "Urnte anteke"},
+    {language: "Avar (Daguestão)", phrase: "Дун лъикӏ гьабула (Dun łik’ habula)"},
+    {language: "Baluchi (Paquistão)", phrase: "من توء دوست دارم (Man to’ dost dāram)"},
+    {language: "Bassa (Libéria)", phrase: "Me nyɔ́mà wù"},
+    {language: "Bemba (Zâmbia)", phrase: "Nalikutemwa"},
+    {language: "Bété (Costa do Marfim)", phrase: "Mɩnɩ gblɛ̌ɩ ɩ́"},
+    {language: "Bikol (Filipinas)", phrase: "Namumutan ta ka"},
+    {language: "Bislama (Vanuatu)", phrase: "Mi lavem yu"},
+    {language: "Brahui (Paquistão)", phrase: "Ishk kanit"},
+    {language: "Buryat (Rússia)", phrase: "Би тандэ хайртай (Bi tandé khairtai)"},
+    {language: "Cham (Vietnã/Camboja)", phrase: "Kâo khĭn ơi"},
+    {language: "Chichewa (Malawi)", phrase: "Ndimakukonda"},
+    {language: "Choctaw (EUA)", phrase: "Chi hollo li"},
+    {language: "Chukchi (Rússia)", phrase: "Гымнан ыʼԓьын (Gymnan yʼḷyn)"},
+    {language: "Dinka (Sudão do Sul)", phrase: "Yin acï nhïïm"},
+    {language: "Efik (Nigéria)", phrase: "Mme ama fi"},
+    {language: "Embu (Quênia)", phrase: "Nĩngwendete"},
+    {language: "Fang (Gabão)", phrase: "Ma dji wa"},
+    {language: "Fijian (Fiji)", phrase: "Au domoni iko"},
+    {language: "Fon (Benin)", phrase: "N yɔ̌n ɔ"},
+    {language: "Ga (Gana)", phrase: "Miisɔɔ"},
+    {language: "Gagauz (Moldávia)", phrase: "Seni seviyorum"},
+    {language: "Ganda (Uganda)", phrase: "Nkwagala"},
+    {language: "Gilbertês (Kiribati)", phrase: "I tangiriko"},
+    {language: "Gusii (Quênia)", phrase: "Nkorete"},
+    {language: "Hadiyya (Etiópia)", phrase: "Ani siino"},
+    {language: "Hausa (África Ocidental)", phrase: "Ina son ka"},
+    {language: "Hmong (Ásia)", phrase: "Kuv hlub koj"},
+    {language: "Iban (Malásia)", phrase: "Aku sayau ngau nuan"},
+    {language: "Idoma (Nigéria)", phrase: "Onye m hụrụ n'anya"},
+    {language: "Ingriano (Rússia)", phrase: "Minä suren sinua"},
+    {language: "Jola (Senegal)", phrase: "Mangioula"},
+    {language: "Kabyle (Argélia)", phrase: "Righ kem"},
+    {language: "Kalenjin (Quênia)", phrase: "Amei chego"},
+    {language: "Kamba (Quênia)", phrase: "Nĩkwendete"},
+    {language: "Kanuri (Nigéria)", phrase: "Nga kuraa"},
+    {language: "Karachay-Balkar (Rússia)", phrase: "Мен сени сюемен (Men seni süyemen)"},
+    {language: "Kashubian (Polônia)", phrase: "Jô cë kòchóm"},
+    {language: "Kikuyu (Quênia)", phrase: "Nĩngwendete"},
+    {language: "Kinyarwanda (Ruanda)", phrase: "Ndagukunda"},
+    {language: "Komi (Rússia)", phrase: "Ме тэнад ӧти (Me tenad öti)"},
+    {language: "Kpelle (Libéria)", phrase: "Nɔ̀ɔ̀ lɔ́ɔ̀"},
+    {language: "Tsuut'ina (Canadá)", phrase: "Diniitsʼá"},
+    {language: "Yuchi (EUA)", phrase: "T’äne’ wadë’hłä"},
+    {language: "Arikara (EUA)", phrase: "Náatawišu’"},
+    {language: "Mandan (EUA)", phrase: "Nų́ų́ʔeta"},
+    {language: "Hocak (EUA)", phrase: "Hinį́į́ wažą́hą́"}
 ];
 
 // // Quiz - Personalize com suas perguntas
@@ -562,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const heart = document.createElement('span');
         heart.innerHTML = '❤️';
         heart.style.position = 'absolute';
-        heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+        heart.style.fontSize = (Math.random() * 30 + 10) + 'px';
         heart.style.left = Math.random() * 100 + '%';
         heart.style.top = '0';
         heart.style.opacity = '0';
