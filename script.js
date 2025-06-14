@@ -1,9 +1,9 @@
-/**
- * Objetivo: JS para mostrar meu amor
+/** 
+ * Objetivo: JS para mostrar meu amor ( ouh ouh meu lençou drobado... )
  * Data: 01/06/25
  * Autor: Gabriel
  * Para: Eduarda
- * Versão: 3.0 (com confetes e quiz)
+ * Versão: 1.0
  **/
 
 'use strict'
